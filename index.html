@@ -1,18 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benimle çıkar mısın? ❤️</title>
+<style>
+body {
+    background: #ffe4ec;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 80px 15px;
+    color: #c2185b;
+}
+button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+.yes-button {
+    background: #ff4081;
+    color: white;
+}
+.no-button {
+    background: #ddd;
+    color: #333;
+}
+</style>
+</head>
+<body>
+
+<h1>Benimle çıkar mısın? ❤️</h1>
+<p id="message">Sana bir sorum var... 🥹</p>
+
+<button class="yes-button" onclick="handleYesClick()">Evet ❤️</button>
+<button class="no-button" onclick="handleNoClick()">Hayır 🙈</button>
+
+<script>
+const messages = [
+    "Emin misin? 🥺",
+    "Bir daha düşün!",
+    "Lütfen ya ❤️",
+    "Son kararın mı? 🙈"
+];
+
+let messageIndex = 0;
+
 function handleNoClick() {
     const noButton = document.querySelector(".no-button");
     const yesButton = document.querySelector(".yes-button");
 
     noButton.textContent = messages[messageIndex];
-
-    messageIndex = (messageIndex + 1) % message.lenght;
+    messageIndex = (messageIndex + 1) % messages.length;
 
     const currentSize = parseFloat(
         window.getComputedStyle(yesButton).fontSize
     );
 
-    yesButton.style.fontSize = `$(currentSize * 1.5)px`;
+    yesButton.style.fontSize = `${currentSize * 1.5}px`;
 }
 
 function handleYesClick() {
     window.location.href = "yes_page.html";
 }
+</script>
+
+</body>
+</html>
